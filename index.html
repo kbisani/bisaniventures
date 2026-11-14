@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bisani Ventures</title>
+<meta name="description" content="Bisani Ventures is a small software studio making games and apps, starting with Dosawalla, a cooking game for phones.">
+<meta property="og:title" content="Bisani Ventures">
+<meta property="og:description" content="A small software studio making games and apps, starting with Dosawalla.">
+<meta property="og:image" content="https://bisaniventures.com/dosawalla.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Mukta:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tile: #f3f6f4;
+    --ink: #142328;
+    --muted: #46595d;
+    --teal: #26726f;
+    --teal-deep: #1d5a57;
+    --gold: #e0a93a;
+    --gold-deep: #b97a22;
+    --line: #d5e0dc;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--tile);
+    color: var(--ink);
+    font: 400 1.125rem/1.6 "Mukta", system-ui, sans-serif;
+  }
+  a { color: var(--teal-deep); text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* The top line: the mark and the name, and a way to say hello. */
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; }
+  .brand { display: flex; align-items: center; gap: .7rem; color: var(--ink); text-decoration: none; font: 700 1.3rem/1 "Baloo 2", system-ui, sans-serif; }
+  .brand img { width: 2.4rem; height: 2.4rem; }
+  .top nav a { font-weight: 500; }
+
+  /* The one bold thing: the headline, with a dosa for its full stop. */
+  .hero { padding: clamp(3rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4.5rem); }
+  h1 {
+    margin: 0;
+    max-width: 14ch;
+    font: 800 clamp(2.7rem, 8.2vw, 6rem)/1.02 "Baloo 2", system-ui, sans-serif;
+    letter-spacing: -.02em;
+  }
+  .lede { margin: 1.4rem 0 0; max-width: 36rem; font-size: 1.25rem; color: var(--muted); }
+
+  .dosa {
+    display: inline-block;
+    width: .42em; height: .42em;
+    margin-left: .04em;
+    padding: 0; border: 0; background: none;
+    vertical-align: baseline;
+    cursor: pointer;
+    perspective: 400px;
+  }
+  .dosa .flip {
+    display: block; position: relative; width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .7s cubic-bezier(.3, 1.5, .5, 1);
+  }
+  .dosa[aria-pressed="true"] .flip { transform: rotateX(180deg); }
+  .dosa:hover .flip { scale: 1.1; }
+  .dosa svg { position: absolute; inset: 0; width: 100%; height: 100%; backface-visibility: hidden; }
+  .dosa svg.back { transform: rotateX(180deg); }
+
+  /* Work: one project now, room for more. */
+  .work { border-top: 2px solid var(--line); padding: clamp(2.5rem, 6vw, 4rem) 0; }
+  .project { display: grid; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+  @media (min-width: 52rem) { .project { grid-template-columns: 1.3fr 1fr; } }
+  .shot { position: relative; margin: 0; }
+  .shot > img { display: block; width: 100%; height: auto; border-radius: 1.1rem; }
+  .shot .icon {
+    position: absolute; left: 1rem; bottom: -1.4rem;
+    width: clamp(4rem, 9vw, 5.5rem); height: auto;
+    border-radius: 1.2rem; border: 4px solid var(--tile);
+  }
+  h2 { margin: 0 0 .5rem; font: 700 clamp(1.8rem, 3.6vw, 2.4rem)/1.1 "Baloo 2", system-ui, sans-serif; }
+  .project p { margin: 0 0 1rem; max-width: 34rem; }
+  .status { display: flex; align-items: center; gap: .5rem; font-weight: 500; color: var(--teal-deep); }
+  .status::before { content: ""; width: .6rem; height: .6rem; border-radius: 50%; background: var(--gold); }
+  .more { margin: clamp(2.5rem, 6vw, 3.5rem) 0 0; color: var(--muted); }
+
+  .contact { border-top: 2px solid var(--line); padding: clamp(2.5rem, 6vw, 4rem) 0 3rem; }
+  .contact p { margin: 0; font-size: 1.25rem; }
+  footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .95rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dosa .flip { transition: none; }
+    .dosa:hover .flip { scale: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><img src="favicon.svg" alt="" width="38" height="38">Bisani Ventures</a>
+    <nav><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Games and apps, cooked up in small batches<button class="dosa" type="button" aria-pressed="false" aria-label="Flip the dosa" title="Flip it"><span class="flip"><svg class="front" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#e0a93a"/><circle cx="20" cy="20" r="19" fill="none" stroke="#c98d27" stroke-width="2"/><circle cx="13" cy="14" r="1.8" fill="#b97a22"/><circle cx="25" cy="25" r="2.2" fill="#b97a22"/><circle cx="27" cy="12" r="1.3" fill="#b97a22"/><circle cx="14" cy="27" r="1.2" fill="#b97a22"/></svg><svg class="back" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#b8742a"/><circle cx="20" cy="20" r="19" fill="none" stroke="#8f5a1f" stroke-width="2"/><circle cx="15" cy="17" r="2.4" fill="#7d4c18"/><circle cx="26" cy="23" r="2" fill="#7d4c18"/><circle cx="19" cy="29" r="1.4" fill="#7d4c18"/></svg></span></button></h1>
+      <p class="lede">Bisani Ventures is a small software studio. Our first game, Dosawalla, is on its way to Google Play.</p>
+    </section>
+
+    <section class="work" aria-labelledby="dosawalla">
+      <div class="project">
+        <figure class="shot">
+          <img src="dosawalla.jpg" width="1024" height="500" alt="Dosawalla's street cart under its striped canopy on a busy street at golden hour">
+          <img class="icon" src="icon.png" width="192" height="192" alt="">
+        </figure>
+        <div>
+          <h2 id="dosawalla">Dosawalla</h2>
+          <p>A cooking game for phones. Pour the batter, spread it thin and lift each dosa off the tawa just as it turns golden, on one cook’s road from a village street cart to the grandest restaurant in the city.</p>
+          <p class="status">Coming soon to Google Play</p>
+          <p><a href="https://kbisani.github.io/dosawalla-privacy/">Dosawalla’s privacy policy</a></p>
+        </div>
+      </div>
+      <p class="more">More projects are on the way.</p>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="hello">
+      <h2 id="hello">Get in touch</h2>
+      <p>Write to us at <a href="mailto:krishnasbusinessemail@gmail.com">krishnasbusinessemail@gmail.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Bisani Ventures LLC</footer>
+</div>
+<script>
+  // The full stop is a dosa: tap it and it flips.
+  const dosa = document.querySelector('.dosa');
+  dosa.addEventListener('click', () => dosa.setAttribute('aria-pressed', String(dosa.getAttribute('aria-pressed') !== 'true')));
+</script>
+</body>
+</html>
