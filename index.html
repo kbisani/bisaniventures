@@ -4,141 +4,198 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bisani Ventures</title>
-<meta name="description" content="Bisani Ventures is a small software studio making games and apps, starting with Dosawalla, a cooking game for phones.">
+<meta name="description" content="Bisani Ventures is an independent software studio making polished, hand-crafted games and apps for phones, starting with Dosawalla.">
 <meta property="og:title" content="Bisani Ventures">
-<meta property="og:description" content="A small software studio making games and apps, starting with Dosawalla.">
-<meta property="og:image" content="https://bisaniventures.com/dosawalla.jpg">
+<meta property="og:description" content="An independent software studio making games and apps for phones, starting with Dosawalla.">
+<meta property="og:image" content="https://bisaniventures.com/img/street-clean.jpg">
+<meta property="og:url" content="https://bisaniventures.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Mukta:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Mukta:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --tile: #f3f6f4;
-    --ink: #142328;
-    --muted: #46595d;
-    --teal: #26726f;
-    --teal-deep: #1d5a57;
+    --white: #ffffff;
+    --mist: #eef4f2;
+    --ink: #132126;
+    --muted: #4d6066;
+    --teal: #1f6b67;
+    --teal-deep: #154e4b;
     --gold: #e0a93a;
     --gold-deep: #b97a22;
-    --line: #d5e0dc;
+    --line: #d9e4e1;
   }
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--tile);
-    color: var(--ink);
-    font: 400 1.125rem/1.6 "Mukta", system-ui, sans-serif;
-  }
+  body { margin: 0; background: var(--white); color: var(--ink); font: 400 1.125rem/1.6 "Mukta", system-ui, sans-serif; }
+  img { max-width: 100%; }
   a { color: var(--teal-deep); text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
-  a:hover { color: var(--ink); }
-  :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
-  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+  :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 8px; }
+  .wrap { max-width: 74rem; margin: 0 auto; padding: 0 1.25rem; }
+  h1, h2, h3 { font-family: "Baloo 2", system-ui, sans-serif; margin: 0; }
 
-  /* The top line: the mark and the name, and a way to say hello. */
-  .top { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; }
-  .brand { display: flex; align-items: center; gap: .7rem; color: var(--ink); text-decoration: none; font: 700 1.3rem/1 "Baloo 2", system-ui, sans-serif; }
-  .brand img { width: 2.4rem; height: 2.4rem; }
-  .top nav a { font-weight: 500; }
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 1.3rem 0; }
+  .brand { display: flex; align-items: center; gap: .7rem; color: var(--ink); text-decoration: none; font: 700 1.35rem/1 "Baloo 2", system-ui, sans-serif; }
+  .brand img { width: 2.5rem; height: 2.5rem; }
+  .top nav { display: flex; gap: 1.6rem; }
+  .top nav a { color: var(--ink); text-decoration: none; font-weight: 500; }
+  .top nav a:hover { color: var(--teal); }
+  .brand { white-space: nowrap; }
+  @media (max-width: 34rem) { .top nav a:not(:last-child) { display: none; } }
 
-  /* The one bold thing: the headline, with a dosa for its full stop. */
-  .hero { padding: clamp(3rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4.5rem); }
-  h1 {
-    margin: 0;
-    max-width: 14ch;
-    font: 800 clamp(2.7rem, 8.2vw, 6rem)/1.02 "Baloo 2", system-ui, sans-serif;
-    letter-spacing: -.02em;
-    text-wrap: balance;
-  }
-  .lede { margin: 1.4rem 0 0; max-width: 36rem; font-size: 1.25rem; color: var(--muted); }
+  /* Hero: the headline beside the game, playing on two phones. */
+  .hero { display: grid; gap: 3rem; align-items: center; padding: clamp(2rem, 6vw, 5rem) 0 clamp(3rem, 7vw, 6rem); }
+  @media (min-width: 60rem) { .hero { grid-template-columns: 1fr 1.05fr; } }
+  h1 { font-weight: 800; font-size: clamp(2.6rem, 6.2vw, 4.9rem); line-height: 1.02; letter-spacing: -.02em; text-wrap: balance; }
+  .lede { margin: 1.3rem 0 2rem; max-width: 33rem; font-size: 1.25rem; color: var(--muted); }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; }
+  .button { display: inline-block; padding: .85rem 1.5rem .75rem; border-radius: 999px; background: var(--teal); color: #fff; text-decoration: none; font-weight: 700; box-shadow: 0 6px 16px -6px rgba(31, 107, 103, .6); }
+  .button:hover { background: var(--teal-deep); }
 
-  .dosa {
-    display: inline-block;
-    font-size: inherit;
-    width: .36em; height: .36em;
-    margin-left: .04em;
-    padding: 0; border: 0; background: none;
-    vertical-align: baseline;
-    cursor: pointer;
-    perspective: 400px;
-  }
-  .dosa .flip {
-    display: block; position: relative; width: 100%; height: 100%;
-    transform-style: preserve-3d;
-    transition: transform .7s cubic-bezier(.3, 1.5, .5, 1);
-  }
+  .dosa { display: inline-block; font-size: inherit; width: .34em; height: .34em; margin-left: .05em; padding: 0; border: 0; background: none; cursor: pointer; perspective: 400px; }
+  .dosa .flip { display: block; position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.3, 1.5, .5, 1); }
   .dosa[aria-pressed="true"] .flip { transform: rotateX(180deg); }
-  .dosa:hover .flip { scale: 1.1; }
   .dosa svg { position: absolute; inset: 0; width: 100%; height: 100%; backface-visibility: hidden; }
   .dosa svg.back { transform: rotateX(180deg); }
 
-  /* Work: one project now, room for more. */
-  .work { border-top: 2px solid var(--line); padding: clamp(2.5rem, 6vw, 4rem) 0; }
-  .project { display: grid; gap: clamp(2.6rem, 4vw, 3rem); align-items: center; }
-  @media (min-width: 52rem) { .project { grid-template-columns: 1.3fr 1fr; } }
-  .shot { position: relative; margin: 0; }
-  .shot > img { display: block; width: 100%; height: auto; border-radius: 1.1rem; }
-  .shot .icon {
-    position: absolute; left: 1rem; bottom: -1.4rem;
-    width: clamp(4rem, 9vw, 5.5rem); height: auto;
-    border-radius: 1.2rem; border: 4px solid var(--tile);
-  }
-  h2 { margin: 0 0 .5rem; font: 700 clamp(1.8rem, 3.6vw, 2.4rem)/1.1 "Baloo 2", system-ui, sans-serif; }
-  .project p { margin: 0 0 1rem; max-width: 34rem; }
-  .status { display: flex; align-items: center; gap: .5rem; font-weight: 500; color: var(--teal-deep); }
-  .status::before { content: ""; width: .6rem; height: .6rem; border-radius: 50%; background: var(--gold); }
-  .more { margin: clamp(2.5rem, 6vw, 3.5rem) 0 0; color: var(--muted); }
+  .stage { position: relative; aspect-ratio: 6 / 5; }
+  .stage::before { content: ""; position: absolute; inset: 12% 10% 6% 14%; border-radius: 50%; background: radial-gradient(closest-side, rgba(224, 169, 58, .45), rgba(224, 169, 58, 0)); }
+  .phone { position: absolute; margin: 0; padding: .55rem .55rem .55rem 1.1rem; border-radius: 1.9rem; background: #11191c; box-shadow: 0 34px 60px -24px rgba(14, 44, 42, .55), 0 10px 22px -8px rgba(14, 44, 42, .25); }
+  .phone::before { content: ""; position: absolute; left: .42rem; top: 50%; width: .3rem; height: .3rem; margin-top: -.15rem; border-radius: 50%; background: #2c3a3e; }
+  .phone img { display: block; width: 100%; height: auto; border-radius: 1.35rem; }
+  .phone.front { width: 86%; left: 0; bottom: 4%; transform: rotate(-3.5deg); z-index: 2; }
+  .phone.back { width: 60%; right: 0; top: 0; transform: rotate(5deg); }
 
-  .contact { border-top: 2px solid var(--line); padding: clamp(2.5rem, 6vw, 4rem) 0 3rem; }
-  .contact p { margin: 0; font-size: 1.25rem; }
-  footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .95rem; }
+  /* The work. */
+  .work { background: var(--mist); padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+  .intro { display: grid; gap: 2.5rem; align-items: center; }
+  @media (min-width: 60rem) { .intro { grid-template-columns: 1fr 1.25fr; } }
+  h2 { font-weight: 800; font-size: clamp(2.1rem, 4.4vw, 3.2rem); line-height: 1.05; }
+  .intro p { margin: .9rem 0 1.4rem; max-width: 32rem; color: var(--muted); font-size: 1.2rem; }
+  .facts { list-style: none; margin: 0 0 1.6rem; padding: 0; display: grid; gap: .55rem; }
+  .facts li { display: flex; gap: .7rem; align-items: baseline; }
+  .facts li::before { content: ""; flex: none; width: .55rem; height: .55rem; border-radius: 50%; background: var(--gold); transform: translateY(-.1rem); }
+  .soon { display: inline-flex; align-items: center; gap: .6rem; padding: .45rem 1rem .35rem; border-radius: 999px; background: var(--white); border: 2px solid var(--line); font-weight: 700; color: var(--teal-deep); }
+  .feature { margin: 0; position: relative; }
+  .feature > img { display: block; width: 100%; height: auto; border-radius: 1.4rem; box-shadow: 0 30px 60px -30px rgba(14, 44, 42, .5); }
+  .feature .icon { position: absolute; left: -1rem; bottom: -1.6rem; width: clamp(4.5rem, 9vw, 6.5rem); border-radius: 1.3rem; border: 5px solid var(--mist); }
 
-  @media (prefers-reduced-motion: reduce) {
-    .dosa .flip { transition: none; }
-    .dosa:hover .flip { scale: none; }
+  .gallery { list-style: none; margin: clamp(3.5rem, 7vw, 5rem) 0 0; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 60rem) { .gallery { grid-template-columns: repeat(4, 1fr); } }
+  .gallery figure { margin: 0; }
+  .gallery img { display: block; width: 100%; height: auto; border-radius: .9rem; }
+  .gallery figcaption { margin-top: .5rem; font-weight: 500; color: var(--muted); font-size: 1rem; }
+
+  /* How we work. */
+  .studio { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+  .studio h2 { max-width: 20ch; text-wrap: balance; }
+  .ways { margin-top: 2.6rem; display: grid; gap: 2rem; }
+  @media (min-width: 52rem) { .ways { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
+  .ways svg { width: 2.6rem; height: 2.6rem; }
+  .ways h3 { margin: .8rem 0 .3rem; font-weight: 700; font-size: 1.45rem; }
+  .ways p { margin: 0; color: var(--muted); }
+
+  /* Say hello. */
+  .contact { position: relative; overflow: hidden; background: var(--teal); color: #f4fbf9; padding: clamp(3.5rem, 8vw, 5.5rem) 0; }
+  .contact::after { content: ""; position: absolute; right: -6rem; top: 50%; width: 20rem; height: 20rem; margin-top: -10rem; border-radius: 50%; background: radial-gradient(circle at 40% 38%, #f0c062, var(--gold) 55%, var(--gold-deep)); opacity: .9; }
+  .contact .wrap { position: relative; z-index: 1; }
+  .contact h2 { color: #fff; }
+  .contact p { margin: .8rem 0 1.8rem; font-size: 1.25rem; max-width: 32rem; }
+  .contact .button { background: var(--gold); color: var(--ink); box-shadow: none; }
+  .contact .button:hover { background: #f0c062; }
+  .contact .address { margin-left: 1rem; color: #f4fbf9; }
+  @media (max-width: 52rem) {
+    .contact::after { width: 10rem; height: 10rem; right: -4.5rem; top: auto; bottom: -5.5rem; margin-top: 0; }
+    .contact .address { display: block; margin: 1rem 0 0; }
   }
+
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding-top: 2rem; padding-bottom: 2.5rem; color: var(--muted); font-size: 1rem; }
+
+  @media (prefers-reduced-motion: reduce) { .dosa .flip { transition: none; } }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="/"><img src="favicon.svg" alt="" width="38" height="38">Bisani Ventures</a>
-    <nav><a href="#contact">Contact</a></nav>
+    <a class="brand" href="/"><img src="favicon.svg" alt="" width="40" height="40">Bisani Ventures</a>
+    <nav><a href="#work">Work</a><a href="#studio">Studio</a><a href="#contact">Contact</a></nav>
   </header>
 
-  <main>
-    <section class="hero">
+  <section class="hero">
+    <div>
       <h1>Games and apps, cooked up in small batches<button class="dosa" type="button" aria-pressed="false" aria-label="Flip the dosa" title="Flip it"><span class="flip"><svg class="front" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#e0a93a"/><circle cx="20" cy="20" r="19" fill="none" stroke="#c98d27" stroke-width="2"/><circle cx="13" cy="14" r="1.8" fill="#b97a22"/><circle cx="25" cy="25" r="2.2" fill="#b97a22"/><circle cx="27" cy="12" r="1.3" fill="#b97a22"/><circle cx="14" cy="27" r="1.2" fill="#b97a22"/></svg><svg class="back" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#b8742a"/><circle cx="20" cy="20" r="19" fill="none" stroke="#8f5a1f" stroke-width="2"/><circle cx="15" cy="17" r="2.4" fill="#7d4c18"/><circle cx="26" cy="23" r="2" fill="#7d4c18"/><circle cx="19" cy="29" r="1.4" fill="#7d4c18"/></svg></span></button></h1>
-      <p class="lede">Bisani Ventures is a small software studio. Our first game, Dosawalla, is on its way to Google Play.</p>
-    </section>
-
-    <section class="work" aria-labelledby="dosawalla">
-      <div class="project">
-        <figure class="shot">
-          <img src="dosawalla.jpg" width="1024" height="500" alt="Dosawalla's street cart under its striped canopy on a busy street at golden hour">
-          <img class="icon" src="icon.png" width="192" height="192" alt="">
-        </figure>
-        <div>
-          <h2 id="dosawalla">Dosawalla</h2>
-          <p>A cooking game for phones. Pour the batter, spread it thin and lift each dosa off the tawa just as it turns golden, on one cook’s road from a village street cart to the grandest restaurant in the city.</p>
-          <p class="status">Coming soon to Google Play</p>
-          <p><a href="https://kbisani.github.io/dosawalla-privacy/">Dosawalla’s privacy policy</a></p>
-        </div>
-      </div>
-      <p class="more">More projects are on the way.</p>
-    </section>
-
-    <section class="contact" id="contact" aria-labelledby="hello">
-      <h2 id="hello">Get in touch</h2>
-      <p>Write to us at <a href="mailto:krishnasbusinessemail@gmail.com">krishnasbusinessemail@gmail.com</a>.</p>
-    </section>
-  </main>
-
-  <footer>© 2026 Bisani Ventures LLC</footer>
+      <p class="lede">Bisani Ventures is an independent software studio. We make polished, hand-crafted games and apps for phones, starting with Dosawalla.</p>
+      <div class="actions"><a class="button" href="#work">See Dosawalla</a><a href="#contact">Get in touch</a></div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <figure class="phone back"><img src="img/map.jpg" alt=""></figure>
+      <figure class="phone front"><img src="img/griddle.jpg" alt=""></figure>
+    </div>
+  </section>
 </div>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="intro">
+      <div>
+        <h2>Dosawalla</h2>
+        <p>Our first game: a cooking game about one cook’s road from a village street cart to the grandest restaurant in the city.</p>
+        <ul class="facts">
+          <li>Pour, spread and flip crispy dosas, made to order</li>
+          <li>80 stops across four places to cook in</li>
+          <li>A story told in painted scenes, with regulars who come back</li>
+          <li>Plays offline, with no account and nothing collected</li>
+        </ul>
+        <span class="soon">Coming soon to Google Play</span>
+      </div>
+      <figure class="feature">
+        <img src="img/street-clean.jpg" alt="Dosawalla's street cart, serving customers on a busy street">
+        <img class="icon" src="icon.png" alt="">
+      </figure>
+    </div>
+    <ul class="gallery">
+      <li><figure><img src="img/tiffin.jpg" alt=""><figcaption>The tiffin shop</figcaption></figure></li>
+      <li><figure><img src="img/family.jpg" alt=""><figcaption>The family restaurant</figcaption></figure></li>
+      <li><figure><img src="img/fancy.jpg" alt=""><figcaption>The fancy restaurant</figcaption></figure></li>
+      <li><figure><img src="img/story.jpg" alt=""><figcaption>The story</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section class="studio" id="studio">
+  <div class="wrap">
+    <h2>A small studio with high standards</h2>
+    <div class="ways">
+      <div>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#eef4f2"/><path d="M14 33c4 1 8-1 9-5l9-13a3 3 0 0 0-5-3L18 25c-4 1-5 5-4 8Z" fill="#e0a93a"/><path d="M27 12l5 3" stroke="#1f6b67" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Drawn by hand</h3>
+        <p>Every street, kitchen and customer in Dosawalla is painted for the game, down to the chutney.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#eef4f2"/><path d="M24 12l9 4v7c0 7-4 11-9 13-5-2-9-6-9-13v-7Z" fill="#1f6b67"/><path d="M20 24l3 3 6-6" fill="none" stroke="#e0a93a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Fair to players</h3>
+        <p>No tricks to keep you hooked, and nothing about you collected without asking.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#eef4f2"/><rect x="11" y="17" width="26" height="15" rx="3.5" fill="#132126"/><rect x="15" y="19.5" width="19" height="10" rx="1.5" fill="#e0a93a"/></svg>
+        <h3>Built for real phones</h3>
+        <p>Tested on low-cost Android phones first, so it runs smoothly for everyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Have a question or an idea?</h2>
+    <p>We’d love to hear from you, whether it’s about Dosawalla or something you want to build.</p>
+    <a class="button" href="mailto:krishnasbusinessemail@gmail.com">Email us</a><span class="address">krishnasbusinessemail@gmail.com</span>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© 2026 Bisani Ventures LLC</span><a href="https://kbisani.github.io/dosawalla-privacy/">Dosawalla privacy policy</a></div>
+</footer>
 <script>
-  // The full stop is a dosa: tap it and it flips.
   const dosa = document.querySelector('.dosa');
   dosa.addEventListener('click', () => dosa.setAttribute('aria-pressed', String(dosa.getAttribute('aria-pressed') !== 'true')));
 </script>
